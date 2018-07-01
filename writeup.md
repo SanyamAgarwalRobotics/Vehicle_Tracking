@@ -116,7 +116,9 @@ Please check "project_video_output.mp4" ,"challenge_video_output.mp4" and "test_
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project. Where will your pipeline likely fail? What could you do to make it more robust?
 
-There are some false positive (which I do not consider to be false) as those cars are comming from the other direction (on the left) and I have used the xstart to regulate the starting of the sliding windows in X direction to filterout those detection. In find_cars I used    for xb in range(20,nxsteps):
+There are some false positive (which I do not consider to be false) as those cars are comming from the other direction (on the left) and I have used the xstart to regulate the starting of the sliding windows in X direction to filterout those detection. In find_cars function in file "Standalone_VehicleDetectionTracking.ipynb"
+I used    
+  for xb in range(20,nxsteps):
             for yb in range(nysteps): 
 I started x_start from 20th step.
 But I think in  practical we need to detect anything along the x axis even if they are outside of the lane. 
